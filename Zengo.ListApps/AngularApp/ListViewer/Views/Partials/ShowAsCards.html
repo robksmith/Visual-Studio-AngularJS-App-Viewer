@@ -1,0 +1,68 @@
+﻿<!--Partial html file to display a list of the apps-->
+
+<div class="container">
+
+    <div class="row">
+
+        <div ng-repeat="app in list" class="col-sm-3">
+
+            <div class="cardView" ng-style="{'background-color':app.col}">
+
+                <!--The header-->
+                <div class="cardHeader" ng-style="{'background-color':app.col}">
+
+                    <a href="#/appDetail/{{app.id}}" class="whiteText">
+                        {{app.name}}
+                    </a>
+
+                    <button class="btn close cardClose" title="Delete" ng-show="app.canDelete">&times;</button>
+
+                </div>
+
+                <!--The middle body-->
+                <div class="cardBody">
+
+                    <div class="clearfix">
+
+                        <div class="pull-left cardBodyLeft">
+
+                            <a href="#/appDetail/{{app.id}}" class="whiteText">
+                                <img data-ng-src="Content/images/appIcon.png" class="cardImage" />
+                            </a>
+
+                        </div>
+
+                        <div class="pull-left cardBodyRight">
+
+                            <div class="cardBodyContent">installed: {{app.installed | date:'dd MMM yyyy hh:mm'}}</div>
+
+                            <div>
+                                <a href="#/appDetail/{{app.id}}" class="btn-link">
+                                    28
+                                    <span data-ng-pluralize count="28"
+                                          when="{'1': 'Use','other': 'Useages'}">
+                                    </span>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--The bottom row-->
+                <div class="cardFooter">
+                    <div style="float: left; width: 40%;margin-left:5px;">{{app.version}}</div>
+                    <div style="float: left; width: 50%;">{{app.memory}}</div>
+                    <br style="clear: left;" />
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
