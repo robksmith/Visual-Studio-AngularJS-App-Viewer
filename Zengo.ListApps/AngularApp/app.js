@@ -17,9 +17,9 @@
                 controller: 'ListController',
                 controllerAs: 'vm'
             }).
-            when('/appDetail/:id', {
+            when('/appDetail/:appid', {
                 templateUrl: partialsLocation + 'AppDetail.html',
-                controller: 'ListController',
+                controller: 'AppDetailController',
                 controllerAs: 'vm'
             }).
             otherwise({

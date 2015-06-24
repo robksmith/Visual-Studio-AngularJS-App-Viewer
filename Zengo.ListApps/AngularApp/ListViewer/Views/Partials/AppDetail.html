@@ -1,29 +1,25 @@
-﻿<div>
-    Show App Details Here
-</div>
+﻿
+<div class="container">
 
+    <div class="detail">
 
-<div>
-    First Name: <input type="text" ng-model="firstName"><br>
-    Last Name: <input type="text" ng-model="lastName"><br>
-    <br>
-    Full Name -: {{firstName + " " + lastName}}
+        <div class="detailHeader" ng-style="{'background-color':app.col}">
+            {{appId + " " + app.name}}
+        </div>
 
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>version</th>
-                <th>-</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="x in list">
-                <td>{{x.name}}</td>
-                <td>{{x.version | uppercase}}</td>
-                <td>*</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="detailBody" >
+            <p>
+                {{app.version}}
+            </p>
 
+            <p>
+                {{app.installed}}
+            </p>
+
+            <p>
+                {{app.memory}}
+            </p>
+        </div>
+
+    </div>
 </div>

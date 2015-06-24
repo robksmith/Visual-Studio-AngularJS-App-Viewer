@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AngularApp\app.js" />
+    <Content Include="AngularApp\ListViewer\Controllers\AppDetailController.js" />
     <Content Include="AngularApp\ListViewer\Controllers\Controllers.js" />
     <Content Include="AngularApp\ListViewer\Controllers\ListController.js" />
     <Content Include="AngularApp\ListViewer\Views\Partials\ShowAsCards.html" />
