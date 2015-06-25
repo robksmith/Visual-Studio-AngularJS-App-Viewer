@@ -10,11 +10,12 @@
         // get the app id from the route params
         vm.appId = ($routeParams.appid) ? parseInt($routeParams.appid) : 0;
 
-        // from the list, find the list of results
-        var result = $.grep(myControllers.list, function (e) { return e.id == vm.appId; });
+        var uri = 'api/app/' + vm.appId;
 
-        // from the list of results, just take the first one
-        vm.app = result[0];
+        $http.get(uri).success(function (response)
+        {
+            vm.app = response;
+        });
     };
 
     AppDetailController.$inject = injectParams;

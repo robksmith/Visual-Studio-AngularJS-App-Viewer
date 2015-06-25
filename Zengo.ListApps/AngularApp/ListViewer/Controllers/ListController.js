@@ -1,6 +1,12 @@
 ﻿
 
-myControllers.controller('ListController', function ($scope)
+myControllers.controller('ListController', function ($scope, $http)
 {
-    $scope.list = myControllers.list;
+    var uri = 'api/app';
+
+    $http.get(uri).success(function (response)
+    {
+        $scope.list = response;
+    });
+
 });
